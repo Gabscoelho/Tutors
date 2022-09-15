@@ -9,13 +9,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.fiap.tutors.sampledata.sampleAttended
-import br.com.fiap.tutors.sampledata.sampleSuggestions
+import br.com.fiap.tutors.model.Tutor
+import br.com.fiap.tutors.sampledata.SampleTutor.sampleAttended
+import br.com.fiap.tutors.sampledata.SampleTutor.sampleSuggestions
 import br.com.fiap.tutors.ui.components.SeachBar
 import br.com.fiap.tutors.ui.components.TutorShowcase
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navigateToProfile: (Tutor) -> Unit) {
     Column(
         Modifier
             .fillMaxSize()
@@ -23,13 +24,21 @@ fun HomeScreen() {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         SeachBar()
-        TutorShowcase(title = "Tutors para você! ♥", tutors = sampleSuggestions)
-        TutorShowcase(title = "Tutorias recentes", tutors = sampleAttended)
+        TutorShowcase(
+            title = "Tutors para você! ♥",
+            tutors = sampleSuggestions,
+            navigateToProfile = navigateToProfile
+        )
+        TutorShowcase(
+            title = "Tutorias recentes",
+            tutors = sampleAttended,
+            navigateToProfile = navigateToProfile
+        )
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-fun HomeScreenPreview() {
-    HomeScreen()
-}
+//@Preview(showSystemUi = true)
+//@Composable
+//fun HomeScreenPreview() {
+//    HomeScreen( navigateToProfile)
+//}
