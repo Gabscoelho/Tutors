@@ -1,6 +1,7 @@
 package br.com.fiap.tutors.ui.screen
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -72,7 +73,7 @@ private fun TutorProfileHeader(
                         .size(imagePerfilSize)
                         .offset(y = 90.dp)
                         .clip(shape = CircleShape)
-                        .border(6.dp,Color(0xFFFFFFFF), CircleShape)
+                        .border(6.dp, Color(0xFFFFFFFF), CircleShape)
                         .align(BottomCenter),
                     contentScale = ContentScale.Crop
                 )
@@ -112,22 +113,6 @@ private fun TutorProfileHeader(
                         fontSize = 18.sp,
                         fontWeight = FontWeight.W200,
                         overflow = TextOverflow.Ellipsis
-                    )
-                }
-                Button(
-                    onClick = {
-//                    val navigate = Intent(this@TutorProfileScreen, MainActivity::class.java)
-//                    startActivity(navigate)
-                    },
-                    Modifier
-                        .padding(start = 16.dp, end = 16.dp, bottom = 16.dp)
-                        .fillMaxWidth()
-                        .height(50.dp),
-                    shape = RoundedCornerShape(100.dp),
-                ) {
-                    Text(
-                        text = "Quero uma tutoria!", fontSize = 16.sp,
-                        fontWeight = FontWeight.W600
                     )
                 }
             }

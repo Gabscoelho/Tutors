@@ -11,11 +11,12 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnAcessoPrincipal : Button = findViewById<Button>(R.id.btn_acesso)
+        val btnAcessoPrincipal: Button = findViewById<Button>(R.id.btn_acesso)
 
         btnAcessoPrincipal.setOnClickListener {
             val acesso = Intent(this, br.com.fiap.tutors.Home::class.java)
             startActivity(acesso)
+
         }
     }
 }
